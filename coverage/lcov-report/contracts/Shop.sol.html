@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\Shop.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Shop.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>83/83</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.43% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>64/70</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>16/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>90/90</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">112×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.9;
+&nbsp;
+import "./Token.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Holder.sol";
+&nbsp;
+contract Shop is Ownable, ERC1155Holder {
+&nbsp;
+    //========= STATE =========//
+    enum Items {Silver, Gold, Sword, Shield, ThorHammer}
+    Token public token;
+&nbsp;
+    uint[] _pricesBuy = [100, 101, 102, 103, 104];
+    uint[] _pricesSell = [90, 91, 92, 93, 94];
+&nbsp;
+    uint public test = 111;
+&nbsp;
+    //========= EVENTS =========//
+    event PriceBuy(uint tokenId, uint oldValue, uint newValue, uint timestamp);
+    event PriceSell(uint tokenId, uint oldValue, uint newValue, uint timestamp);
+    event Buy(address buyer, uint tokenId, uint amount, uint price, uint timestamp);
+    event BuyBatch(address buyer, uint[] ids, uint[] amounts, uint[] prices, uint timestamp);
+    event Sell(address seller, uint tokenId, uint amount, uint price, uint timestamp);
+    event SellBatch(address seller, uint[] ids, uint[] amounts, uint[] prices, uint timestamp);
+    event Mint(uint tokenId, uint amount, uint timestamp);
+    event MintBatch(uint[] ids, uint[] amounts, uint timestamp);
+    event Burn(uint tokenId, uint amount, uint timestamp);
+    event BurnBatch(uint[] ids, uint[] amounts, uint timestamp);
+&nbsp;
+    //========= CONSTRUCTOR =========//
+    constructor(string memory uri) {
+        token = new Token(uri);
+        token.mint(address(this), uint(Items.Silver), 10 ** 6, "");
+        token.mint(address(this), uint(Items.Gold), 10 ** 6, "");
+        token.mint(address(this), uint(Items.Shield), 10 ** 3, "");
+        token.mint(address(this), uint(Items.Sword), 10 ** 3, "");
+        token.mint(address(this), uint(Items.ThorHammer), 10 ** 0, "");
+        token.setBaseURI("https://w3s.link/ipfs/bafybeiaxf7knol6sueq26vegx2j3rq4ra3d56k3gfryaqzap6awjyr64em/");
+        token.setURI(uint(Items.Silver), "0.json");
+        token.setURI(uint(Items.Gold), "1.json");
+        token.setURI(uint(Items.Sword), "2.json");
+        token.setURI(uint(Items.Shield), "3.json");
+        token.setURI(uint(Items.ThorHammer), "4.json");
+    }
+&nbsp;
+    //========= GET PRICES BUY =========//
+    // get array of prices for buy
+    function getPricesBuy() public view returns (uint[] memory) {
+        return _pricesBuy;
+    }
+&nbsp;
+    //========= SET PRICE BUY =========//
+    // set price for buy for token with {tokenId}
+    function setPriceBuy(uint tokenId, uint _newPrice) external onlyOwner {
+        _requireIdInRange(tokenId);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_newPrice != 0, "Token shop: price could not be equal 0");
+        uint oldValue = _pricesBuy[tokenId];
+        _pricesBuy[tokenId] = _newPrice;
+        emit PriceBuy(tokenId, oldValue, _newPrice, block.timestamp);
+    }
+&nbsp;
+    //========= GET PRICES SELL =========//
+    // get array of prices for sell
+    function getPricesSell() public view returns (uint[] memory) {
+        return _pricesSell;
+    }
+&nbsp;
+    //========= SET PRICE SELL =========//
+    // set price for sell for token with {tokenId}
+    function setPriceSell(uint tokenId, uint _newPrice) external onlyOwner {
+        _requireIdInRange(tokenId);
+        uint oldValue = _pricesSell[tokenId];
+        _pricesSell[tokenId] = _newPrice;
+        emit PriceSell(tokenId, oldValue, _newPrice, block.timestamp);
+    }
+&nbsp;
+    //========= BUY =========//
+    function buy(uint tokenId, uint amount) external payable {
+        _requireIdInRange(tokenId);
+&nbsp;
+        // amount &gt; 0
+        require(amount &gt; 0, "Shop: amount could not be equal 0");
+&nbsp;
+        // buyer sent the required amount of ether
+        require(msg.value == _pricesBuy[tokenId] * amount, "Shop: not enough ether");
+&nbsp;
+        // shop have {amount} tokens with {tokenId}
+        require(token.balanceOf(address(this), tokenId) &gt;= amount, "Shop: shop doesn't have enough tokens");
+&nbsp;
+        // shop transfer tokens to buyer
+        token.safeTransferFrom(address(this), msg.sender, tokenId, amount, "");
+&nbsp;
+        // emit event
+        emit Buy(msg.sender, tokenId, amount, _pricesBuy[tokenId], block.timestamp);
+    }
+&nbsp;
+    //========= BUY BATCH =========//
+    function buyBatch(uint[] calldata ids, uint[] calldata amounts) external payable {
+        require(ids.length == amounts.length, "Shop: ids and amounts length mismatch");
+&nbsp;
+        uint cost;
+        uint[] memory prices = new uint[](ids.length);
+&nbsp;
+        for (uint i = 0; i &lt; ids.length; i++) {
+            _requireIdInRange(ids[i]);
+            // amount &gt; 0
+            require(amounts[i] &gt; 0, "Shop: amount could not be equal 0");
+            // shop have {amount} tokens with {tokenId}
+            require(token.balanceOf(address(this), ids[i]) &gt;= amounts[i], "Shop: shop doesn't have enough tokens");
+            cost = cost + _pricesBuy[ids[i]] * amounts[i];
+            prices[i] = _pricesBuy[ids[i]];
+        }
+&nbsp;
+        // buyer sent the required amount of ether
+        require(msg.value == cost, "Shop: not enough ether");
+&nbsp;
+        // shop batch transfer tokens to buyer
+        token.safeBatchTransferFrom(address(this), msg.sender, ids, amounts, "");
+&nbsp;
+        // emit event
+        emit BuyBatch(msg.sender, ids, amounts, prices, block.timestamp);
+    }
+&nbsp;
+    //========= SELL =========//
+    function sell(uint tokenId, uint amount) external {
+        _requireIdInRange(tokenId);
+&nbsp;
+        // amount &gt; 0
+        require(amount &gt; 0, "Shop: amount could not be equal 0");
+&nbsp;
+        // seller have {amount} of token {tokenId}
+        require(token.balanceOf(msg.sender, tokenId) &gt;= amount, "Shop: seller doesn't have enough tokens");
+&nbsp;
+        // shop is operator for seller
+        require(token.isApprovedForAll(msg.sender, address(this)), "Shop: shop is not operator for seller");
+&nbsp;
+        // shop's ether balance is enough for buy tokens from seller
+        require(address(this).balance &gt;= _pricesSell[tokenId] * amount, "Shop: shop has not enough ether");
+&nbsp;
+        // transfer tokens from seller to shop
+        token.safeTransferFrom(msg.sender, address(this), tokenId, amount, "");
+&nbsp;
+        // send ether from shop to seller
+        (bool success,) = msg.sender.call{value : _pricesSell[tokenId] * amount}("");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(success, "Shop: transfer ether to seller failed");
+&nbsp;
+        // emit event
+        emit Sell(msg.sender, tokenId, amount, _pricesSell[tokenId], block.timestamp);
+    }
+&nbsp;
+    //========= SELL BATCH =========//
+    function sellBatch(uint[] calldata ids, uint[] calldata amounts) external {
+        require(ids.length == amounts.length, "Shop: ids and amounts length mismatch");
+&nbsp;
+        uint cost;
+        uint[] memory prices = new uint[](ids.length);
+&nbsp;
+        for (uint i = 0; i &lt; ids.length; i++) {
+            _requireIdInRange(ids[i]);
+            // amount &gt; 0
+            require(amounts[i] &gt; 0, "Shop: amount could not be equal 0");
+            // seller have {amount} of token {tokenId}
+            require(token.balanceOf(msg.sender, ids[i]) &gt;= amounts[i], "Shop: seller doesn't have enough tokens");
+            cost = cost + _pricesSell[ids[i]] * amounts[i];
+            prices[i] = _pricesSell[ids[i]];
+        }
+&nbsp;
+        // shop is operator for seller
+        require(token.isApprovedForAll(msg.sender, address(this)), "Shop: shop is not operator for seller");
+        // shop's ether balance is enough for buy tokens from seller
+        require(address(this).balance &gt;= cost, "Shop: shop has not enough ether");
+&nbsp;
+        // batch transfer tokens from seller to shop
+        token.safeBatchTransferFrom(msg.sender, address(this), ids, amounts, "");
+&nbsp;
+        // send ether from shop to seller
+        (bool success,) = msg.sender.call{value : cost}("");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(success, "Shop: transfer ether to seller failed");
+&nbsp;
+        // emit event
+        emit SellBatch(msg.sender, ids, amounts, prices, block.timestamp);
+    }
+&nbsp;
+    //========= MINT TO SHOP =========//
+    function mintToShop(uint tokenId, uint amount) external onlyOwner {
+        _requireIdInRange(tokenId);
+        require(amount &gt; 0, "Shop: amount of minted tokens could not to be equal 0");
+        token.mint(address(this), tokenId, amount, "");
+        emit Mint(tokenId, amount, block.timestamp);
+    }
+&nbsp;
+    //========= MINT BATCH TO SHOP =========//
+    function mintBatchToShop(uint[] calldata ids, uint[] calldata amounts) external onlyOwner {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(ids.length == amounts.length, "Shop: ids and amounts length mismatch");
+        for (uint i = 0; i &lt; ids.length; i++) {
+            _requireIdInRange(ids[i]);
+            require(amounts[i] &gt; 0, "Shop: amount of minted tokens could not to be equal 0");
+        }
+        token.mintBatch(address(this), ids, amounts, "");
+        emit MintBatch(ids, amounts, block.timestamp);
+    }
+&nbsp;
+    //========= BURN FROM SHOP =========//
+    function burnFromShop(uint tokenId, uint amount) external onlyOwner {
+        _requireIdInRange(tokenId);
+        require(amount &gt; 0, "Shop: amount of burned tokens could not to be equal 0");
+        token.burn(address(this), tokenId, amount);
+        emit Burn(tokenId, amount, block.timestamp);
+    }
+&nbsp;
+    //========= BURN BATCH FROM SHOP =========//
+    function burnBatchFromShop(uint[] calldata ids, uint[] calldata amounts) external onlyOwner {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(ids.length == amounts.length, "Shop: ids and amounts length mismatch");
+        for (uint i = 0; i &lt; ids.length; i++) {
+            _requireIdInRange(ids[i]);
+            require(amounts[i] &gt; 0, "Shop: amount of burned tokens could not to be equal 0");
+        }
+        token.burnBatch(address(this), ids, amounts);
+        emit BurnBatch(ids, amounts, block.timestamp);
+    }
+&nbsp;
+    //========= GET SHOP BALANCE =========//
+    function getShopBalance() public view onlyOwner returns (uint) {
+        return address(this).balance;
+    }
+&nbsp;
+    //========= WITHDRAW ALL =========//
+    function withdrawAll() public onlyOwner {
+        address owner = owner();
+        (bool success,) = owner.call{value : address(this).balance}("");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(success, "NFTShop: withdrawAll failed");
+    }
+&nbsp;
+    //========= _REQUIRE ID IN RANGE =========//
+    // generate an error when tokenId is out of range
+    function _requireIdInRange(uint tokenId) internal pure {
+        require(uint(type(Items).min) &lt;= tokenId &amp;&amp; uint(type(Items).max) &gt;= tokenId, "Shop: token id out of range");
+    }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 13 2023 19:37:30 GMT+0300 (Москва, стандартное время)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
